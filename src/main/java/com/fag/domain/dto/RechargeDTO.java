@@ -1,15 +1,11 @@
 package com.fag.domain.dto;
 
-import java.util.UUID;
-
-import com.fag.domain.entities.PhoneBO;
-
 public class RechargeDTO {
-    private Integer id;
+    private String id;
     private Double value;
     private String document;
     private Integer operatorID;
-    private PhoneBO phone;
+    private PhoneDTO phone;
     private String receipt;
     private Long transactionID;
     private boolean success;
@@ -38,11 +34,11 @@ public class RechargeDTO {
         this.operatorID = operatorID;
     }
 
-    public PhoneBO getPhone() {
+    public PhoneDTO getPhone() {
         return phone;
     }
 
-    public void setPhone(PhoneBO phone) {
+    public void setPhone(PhoneDTO phone) {
         this.phone = phone;
     }
 
@@ -70,11 +66,11 @@ public class RechargeDTO {
         this.success = success;
     }
 
-    public Integer getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(String id) {
         this.id = id;
     }
 

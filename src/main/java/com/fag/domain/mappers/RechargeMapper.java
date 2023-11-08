@@ -1,28 +1,35 @@
 package com.fag.domain.mappers;
 
+import java.util.UUID;
+
 import com.fag.domain.dto.RechargeDTO;
 import com.fag.domain.entities.RechargeBO;
 
 public class RechargeMapper {
-    public static RechargeDTO toDTO(RechargeBO rechargeBO) {
-        RechargeDTO rechargeDTO = new RechargeDTO();
-
-        rechargeDTO.setDocument(rechargeBO.getDocument());
-        rechargeDTO.setId(rechargeBO.getId());
-        rechargeDTO.setOperatorID(rechargeBO.getProviderID());
-        rechargeDTO.setPhone(rechargeBO.getPhone());
-        rechargeDTO.setReceipt(rechargeBO.getReceipt());
-        rechargeDTO.setSuccess(rechargeBO.isSuccess());
-        rechargeDTO.setTransactionID(rechargeBO.getTransactionID());
-        rechargeDTO.setValue(rechargeBO.getValue());
-
-        return rechargeDTO;
+    public static RechargeBO toBO(RechargeDTO dto) {
+        return new RechargeBO(
+                dto.getId() != null ? UUID.fromString(dto.getId()) : null,
+                dto.getValue(),
+                dto.getDocument(),
+                dto.getOperatorID(),
+                PhoneMapper.toBO(dto.getPhone()),
+                dto.getReceipt(),
+                dto.getTransactionID(),
+                dto.isSuccess());
     }
 
-    public static RechargeBO toBO(RechargeDTO rechargeDTO) {
-        RechargeBO rechargeBO = new RechargeBO(rechargeDTO.getId(), rechargeDTO.getValue(), rechargeDTO.getDocument(),
-            rechargeDTO.getOperatorID(), rechargeDTO.getPhone(), rechargeDTO.getReceipt(), rechargeDTO.getTransactionID(), rechargeDTO.isSuccess());
+    public static RechargeDTO toDTO(RechargeBO bo) {
+        RechargeDTO dto = new RechargeDTO();
 
-        return rechargeBO;
+        dto.setId(bo.getId() != null ? bo.getId().toString() : null);
+        dto.setValue(bo.getValue());
+        dto.setDocument(bo.getDocument());
+        dto.setOperatorID(bo.getProviderID());
+        dto.setPhone(PhoneMapper.toDTO(bo.getPhone()));
+        dto.setReceipt(bo.getReceipt());
+        dto.setTransactionID(bo.getTransactionID());
+        dto.setSuccess(bo.isSuccess());
+
+        return dto;
     }
 }

@@ -12,8 +12,8 @@ public class ListProducts {
         this.vendor = vendor;
     }
 
-    public List<ProductDTO> execute(Integer operatorId) {
-        List<ProductDTO> productDto = vendor.listProducts(null, null);
+    public List<ProductDTO> execute(Integer operatorId, Integer stateCode) {
+        List<ProductDTO> productDto = vendor.listProducts(stateCode, operatorId);
 
         return productDto;
     }

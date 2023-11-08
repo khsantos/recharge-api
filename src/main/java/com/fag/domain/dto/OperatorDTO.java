@@ -1,11 +1,11 @@
 package com.fag.domain.dto;
 
 public class OperatorDTO {
-    Integer category;
-    String name;
-    Integer providerID;
-    Double maxValue;
-    Double minValue;
+    private Integer category;
+    private String name;
+    private Integer providerID;
+    private Double maxValue;
+    private Double minValue;
 
     public void setCategory(Integer category) {
         this.category = category;
