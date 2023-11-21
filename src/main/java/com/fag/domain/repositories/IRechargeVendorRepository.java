@@ -8,7 +8,7 @@ import com.fag.domain.dto.RechargeDTO;
 
 public interface IRechargeVendorRepository {
 
-    RechargeDTO create(RechargeDTO rechargeDTO);
+    RechargeDTO create(RechargeDTO recharge);
 
     List<OperatorDTO> listOperators(Integer stateCode, Integer category);
     List<ProductDTO> listProducts(Integer stateCode, Integer operatorId);

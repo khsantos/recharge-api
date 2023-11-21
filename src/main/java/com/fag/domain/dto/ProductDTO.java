@@ -1,16 +1,34 @@
 package com.fag.domain.dto;
 
 public class ProductDTO {
+    private Integer code;
+    private Integer cost;
+    private Integer dueProduct;
     private String name;
     private Double value;
-    private Integer due;
 
-    public void setDue(Integer due) {
-        this.due = due;
+    public Integer getCode() {
+        return code;
     }
-    
-    public Integer getDue() {
-        return due;
+
+    public void setCode(Integer code) {
+        this.code = code;
+    }
+
+    public Integer getCost() {
+        return cost;
+    }
+
+    public void setCost(Integer cost) {
+        this.cost = cost;
+    }
+
+    public Integer getDueProduct() {
+        return dueProduct;
+    }
+
+    public void setDueProduct(Integer dueProduct) {
+        this.dueProduct = dueProduct;
     }
 
     public void setName(String name) {

@@ -4,10 +4,10 @@ public class RechargeDTO {
     private String id;
     private Double value;
     private String document;
-    private Integer operatorID;
+    private Integer operatorId;
     private PhoneDTO phone;
     private String receipt;
-    private Long transactionID;
+    private Long transactionId;
     private boolean success;
 
     public Double getValue() {
@@ -26,14 +26,6 @@ public class RechargeDTO {
         this.document = document;
     }
 
-    public Integer getOperatorID() {
-        return operatorID;
-    }
-
-    public void setOperatorID(Integer operatorID) {
-        this.operatorID = operatorID;
-    }
-
     public PhoneDTO getPhone() {
         return phone;
     }
@@ -50,14 +42,6 @@ public class RechargeDTO {
         this.receipt = receipt;
     }
 
-    public Long getTransactionID() {
-        return transactionID;
-    }
-
-    public void setTransactionID(Long transactionID) {
-        this.transactionID = transactionID;
-    }
-
     public boolean isSuccess() {
         return success;
     }
@@ -72,6 +56,22 @@ public class RechargeDTO {
 
     public void setId(String id) {
         this.id = id;
+    }
+
+    public Integer getOperatorId() {
+        return operatorId;
+    }
+
+    public void setOperatorId(Integer operatorId) {
+        this.operatorId = operatorId;
+    }
+
+    public Long getTransactionId() {
+        return transactionId;
+    }
+
+    public void setTransactionId(Long transactionId) {
+        this.transactionId = transactionId;
     }
 
 }

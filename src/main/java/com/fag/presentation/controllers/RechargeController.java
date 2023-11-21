@@ -22,14 +22,16 @@ public class RechargeController {
     @GET
     @Path("/operators")
     @Produces(MediaType.APPLICATION_JSON)
-    public Response listOperators(@HeaderParam("stateCode") Integer stateCode, @HeaderParam("category") Integer category) {
+    public Response listOperators(@HeaderParam("stateCode") Integer stateCode,
+            @HeaderParam("category") Integer category) {
         return service.listOperators(stateCode, category);
-    } 
+    }
 
     @GET
     @Path("/products")
     @Produces(MediaType.APPLICATION_JSON)
-    public Response listProducts(@HeaderParam("stateCode") Integer stateCode, @HeaderParam("operatorId") Integer operatorId) {
+    public Response listProducts(@HeaderParam("stateCode") Integer stateCode,
+            @HeaderParam("operatorId") Integer operatorId) {
         return service.listProducts(stateCode, operatorId);
     }
 

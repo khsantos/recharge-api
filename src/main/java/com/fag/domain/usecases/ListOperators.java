@@ -9,12 +9,10 @@ public class ListOperators {
     private IRechargeVendorRepository vendor;
 
     public ListOperators(IRechargeVendorRepository vendor) {
-        this.vendor = vendor;
+      this.vendor = vendor;
     }
-
+  
     public List<OperatorDTO> execute(Integer stateCode, Integer category) {
-        List<OperatorDTO> listDTO = vendor.listOperators(stateCode, category);
-
-        return listDTO;
+      return vendor.listOperators(stateCode, category);
     }
 }

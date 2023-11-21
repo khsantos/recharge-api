@@ -14,8 +14,8 @@ public class CelcoinRechargeMapper {
 
         vendorDTO.setCpfCnpj(appDTO.getDocument());
         vendorDTO.setPhone(CelcoinRechargePhoneMapper.toVendorDTO(appDTO.getPhone()));
-        vendorDTO.setProviderId(appDTO.getOperatorID());
-        vendorDTO.setTopupData(vendorDTO.getTopupData());
+        vendorDTO.setProviderId(appDTO.getOperatorId());
+        vendorDTO.setTopupData(topUpData);
 
         return vendorDTO;
     }

@@ -26,26 +26,26 @@ public class RechargeService {
 
     public Response listOperators(Integer stateCode, Integer category) {
         ListOperators listOperators = new ListOperators(celcoin);
-
+    
         List<OperatorDTO> operators = listOperators.execute(stateCode, category);
-
+    
         return Response.ok(operators).build();
-    }
-
-    public Response listProducts(Integer stateCode, Integer operatorId) {
+      }
+    
+      public Response listProducts(Integer stateCode, Integer operatorId) {
         ListProducts listServices = new ListProducts(celcoin);
-
-        List<ProductDTO> services = listServices.execute(stateCode, operatorId);
-
-        return Response.ok(services).build();
-    }
-
-    @Transactional
-    public Response handleRecharge(RechargeDTO dto) {
+    
+        List<ProductDTO> operators = listServices.execute(stateCode, operatorId);
+    
+        return Response.ok(operators).build();
+      }
+    
+      @Transactional
+      public Response handleRecharge(RechargeDTO dto) {
         CreateRecharge createRecharge = new CreateRecharge(celcoin, panacheRepo);
-
+    
         RechargeDTO createdRecharge = createRecharge.execute(dto);
-
+    
         return Response.ok(createdRecharge).build();
-    }
+      }
 }

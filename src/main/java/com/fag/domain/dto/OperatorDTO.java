@@ -2,8 +2,9 @@ package com.fag.domain.dto;
 
 public class OperatorDTO {
     private Integer category;
+    private Integer rechargeType;
     private String name;
-    private Integer providerID;
+    private Integer providerId;
     private Double maxValue;
     private Double minValue;
 
@@ -38,12 +39,22 @@ public class OperatorDTO {
         return name;
     }
 
-    public void setProviderID(Integer providerID) {
-        this.providerID = providerID;
+    public Integer getRechargeType() {
+        return rechargeType;
     }
 
-    public Integer getProviderID() {
-        return providerID;
+    public void setRechargeType(Integer rechargeType) {
+        this.rechargeType = rechargeType;
     }
+
+    public Integer getProviderId() {
+        return providerId;
+    }
+
+    public void setProviderId(Integer providerId) {
+        this.providerId = providerId;
+    }
+
+
 
 }

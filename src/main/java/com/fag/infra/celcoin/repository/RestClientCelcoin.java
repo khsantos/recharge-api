@@ -30,15 +30,15 @@ public interface RestClientCelcoin {
     @GET
     @Path("/v5/transactions/topups/providers")
     CelcoinOperatorsDTO listOperators(@HeaderParam("Authorization") String token,
-        @QueryParam("stateCode") Integer stateCode, @QueryParam("category") Integer category);
+            @QueryParam("stateCode") Integer stateCode, @QueryParam("category") Integer category);
 
     @GET
     @Path("/v5/transactions/topups/provider-values")
-    CelcoinProductsDTO listProducts(@HeaderParam("Authorization") String token, 
-        @QueryParam("stateCode") Integer stateCode, @QueryParam("providerId") Integer operatorId);
+    CelcoinProductsDTO listProducts(@HeaderParam("Authorization") String token,
+            @QueryParam("stateCode") Integer stateCode, @QueryParam("providerId") Integer operatorId);
 
     @POST
-    @Path("v5/transactions/topups")
+    @Path("/v5/transactions/topups")
     @Consumes(MediaType.APPLICATION_JSON)
     CelcoinRechargeResponseDTO handleRecharge(@HeaderParam("Authorization") String token, CelcoinRechargeDTO payload);
 }

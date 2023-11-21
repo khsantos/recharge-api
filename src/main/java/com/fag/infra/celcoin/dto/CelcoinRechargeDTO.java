@@ -4,7 +4,7 @@ public class CelcoinRechargeDTO {
     private String cpfCnpj;
     private Integer providerId;
     private CelcoinPhoneDTO phone;
-    private CelcoinRechargeDTO topupData;
+    private CelcoinRechargeValueDTO topupData;
     
     public String getCpfCnpj() {
         return cpfCnpj;
@@ -24,12 +24,13 @@ public class CelcoinRechargeDTO {
     public void setPhone(CelcoinPhoneDTO phone) {
         this.phone = phone;
     }
-    public CelcoinRechargeDTO getTopupData() {
+    public CelcoinRechargeValueDTO getTopupData() {
         return topupData;
     }
-    public void setTopupData(CelcoinRechargeDTO topupData) {
+    public void setTopupData(CelcoinRechargeValueDTO topupData) {
         this.topupData = topupData;
     }
+
 
     
 }

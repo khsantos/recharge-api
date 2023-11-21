@@ -9,26 +9,26 @@ import com.fag.domain.repositories.IRechargeVendorRepository;
 public class CreateRecharge {
     private IRechargeVendorRepository vendor;
 
-    IRechargeDataBaseRepository dbRepository;
-
+    private IRechargeDataBaseRepository dbRepository;
+  
     public CreateRecharge(IRechargeVendorRepository vendor, IRechargeDataBaseRepository dbRepository) {
-        this.vendor = vendor;
-        this.dbRepository = dbRepository;
+      this.vendor = vendor;
+      this.dbRepository = dbRepository;
     }
-
-    public RechargeDTO execute(RechargeDTO rechargeDTO) {
-        RechargeBO bo = RechargeMapper.toBO(rechargeDTO);
-
-        RechargeDTO rechargeResponse = vendor.create(rechargeDTO);
-
-        if(rechargeResponse.isSuccess()) {
-            bo.handleSuccess(rechargeResponse.getReceipt(), rechargeResponse.getTransactionID());
-        } else {
-            bo.handleError();
-        }
-
-        dbRepository.persist(bo);
-
-        return rechargeResponse;
+  
+    public RechargeDTO execute(RechargeDTO dto) {
+      RechargeBO bo = RechargeMapper.toBO(dto);
+  
+      RechargeDTO rechargeResponse = vendor.create(dto);
+  
+      if (rechargeResponse.isSuccess()) {
+        bo.handleSuccess(rechargeResponse.getReceipt(), rechargeResponse.getTransactionId());
+      } else {
+        bo.handleError();
+      }
+  
+      dbRepository.persist(bo);
+  
+      return rechargeResponse;
     }
 }

@@ -6,21 +6,21 @@ public class RechargeBO {
     private UUID id;
     private Double value;
     private String document;
-    private Integer providerID;
+    private Integer providerId;
     private PhoneBO phone;
     private String receipt;
-    private Long transactionID;
+    private Long transactionId;
     private boolean success;
 
-    public RechargeBO(UUID id, Double value, String document, Integer providerID, PhoneBO phone, String receipt,
-            Long transactionID, boolean success) {
+    public RechargeBO(UUID id, Double value, String document, Integer providerId, PhoneBO phone, String receipt,
+            Long transactionId, boolean success) {
         this.id = id != null ? id : UUID.randomUUID();
         this.value = value;
         this.document = document;
-        this.providerID = providerID;
+        this.providerId = providerId;
         this.phone = phone;
         this.receipt = receipt;
-        this.transactionID = transactionID;
+        this.transactionId = transactionId;
         this.success = success;
 
         validate();
@@ -28,7 +28,7 @@ public class RechargeBO {
 
     public void handleSuccess(String receipt, Long transactionId) {
         this.receipt = receipt;
-        this.transactionID = transactionId;
+        this.transactionId = transactionId;
         this.success = true;
     }
 
@@ -62,10 +62,6 @@ public class RechargeBO {
         return document;
     }
 
-    public Integer getProviderID() {
-        return providerID;
-    }
-
     public PhoneBO getPhone() {
         return phone;
     }
@@ -74,12 +70,16 @@ public class RechargeBO {
         return receipt;
     }
 
-    public Long getTransactionID() {
-        return transactionID;
-    }
-
     public boolean isSuccess() {
         return success;
+    }
+
+    public Integer getProviderId() {
+        return providerId;
+    }
+
+    public Long getTransactionId() {
+        return transactionId;
     }
 }
 
